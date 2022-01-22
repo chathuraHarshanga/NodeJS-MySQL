@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mysql = require("mysql");
+
+const beer = require("./controllers/beer.js");
 
 const app = express();
 
@@ -8,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 
-//MySQL
+app.get("/", beer);
 
 //listen on port
 app.listen(PORT, () =>
