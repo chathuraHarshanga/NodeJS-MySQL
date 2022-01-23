@@ -1,7 +1,7 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+import express from "express";
+import bodyParser from "body-parser";
 
-const beer = require("./controllers/beer.js");
+import beerRoutes from "./routes/BeerRoutes.js";
 
 const app = express();
 
@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 
-app.get("/", beer);
+app.use("/", beerRoutes);
 
 //listen on port
 app.listen(PORT, () =>
