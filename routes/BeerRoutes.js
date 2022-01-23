@@ -4,6 +4,7 @@ import {
   getBeer,
   deleteBeer,
   addBeer,
+  updateBeer,
 } from "../controllers/BeerController.js";
 const router = express.Router();
 
@@ -14,5 +15,7 @@ router.get("/:id", getBeer);
 router.delete("/:id", deleteBeer);
 
 router.post("", addBeer);
+
+router.put("", updateBeer);
 
 export default router;
